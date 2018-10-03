@@ -33,16 +33,7 @@ spec:
             - name: mssql
               containerPort: 1433
           volumeMounts:
-            - name: mssql-persistent-storage
-              mountPath: /var/opt/mssql
-            - name: mssql-bkp-persistent-storage
-              mountPath: /var/opt/bkp
-      volumes:
-        - name: mssql-persistent-storage
-          gcePersistentDisk:
-            pdName: mssql-data
-            fsType: ext4
-        - name: mssql-bkp-persistent-storage
-          gcePersistentDisk:
-            pdName: mssql-bkp
-            fsType: ext4
+            - name: mssql-volume
+              mountPath: /mnt/data/mssql
+            - name: bkp-volume
+              mountPath: /mnt/data/bkp
