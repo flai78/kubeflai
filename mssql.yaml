@@ -33,15 +33,15 @@ spec:
             - name: mssql
               containerPort: 1433
           volumeMounts:
-            - name: mssql-volume
-              mountPath: /mnt/data/mssql
-            - name: bkp-volume
-              mountPath: /mnt/data/bkp
+            - name: mssqldb
+              mountPath: /var/opt/mssql
+            - name: bkpdb
+              mountPath: /var/opt/bkp
       volumes:
-            - name: mssql-volume
+            - name: mssqldb
               persistentVolume:
                 claimName: mssql-volume
-            - name: bkp-volume
+            - name: bkpdb
               persistentVolume:
                 claimName: bkp-volume
            
