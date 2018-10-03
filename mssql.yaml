@@ -39,6 +39,6 @@ spec:
               mountPath: /mnt/data/bkp
       volumes:
             - name: mssql-volume
-              emptyDir: {}
+              HostPath: /mnt/data/mssql
             - name: bkp-volume
-              emptyDir: {}
+              HostPath: /mnt/data/mssql
