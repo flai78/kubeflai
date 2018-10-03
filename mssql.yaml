@@ -39,6 +39,6 @@ spec:
               mountPath: /mnt/data/bkp
       volumes:
             - name: mssql-volume
-              HostPath: /mnt/data/mssql
+              hostPath: /mnt/data/mssql
             - name: bkp-volume
-              HostPath: /mnt/data/mssql
+              hostPath: /mnt/data/mssql
