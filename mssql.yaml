@@ -39,9 +39,9 @@ spec:
               mountPath: /var/opt/bkp
       volumes:
             - name: mssqldb
-              persistentVolume:
+              persistentVolumeClaim:
                 claimName: mssql-volume
             - name: bkpdb
-              persistentVolume:
+              persistentVolumeClaim:
                 claimName: bkp-volume
            

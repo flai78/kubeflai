@@ -1,0 +1,59 @@
+#####  MS SQL Persistent Volume
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: mssql-pv
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data/mssql"
+---
+#####  Backup Persistent Volume
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: bkp-pv
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data/bkp"
+---
+##### MS SQL persistent volume claim
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+   name: mssql-pvc
+   annotations:
+     volume.beta.kubernetes.io/storage-class: mssql-pv
+spec:
+   accessModes:
+     - ReadWriteOnce
+   resources:
+     requests:
+       storage: 10Gi
+---
+##### MS SQL persistent volume claim
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+   name: bkp-pvc
+   annotations:
+     volume.beta.kubernetes.io/storage-class: bkp-pv
+spec:
+   accessModes:
+     - ReadWriteOnce
+   resources:
+     requests:
+       storage: 10Gi
