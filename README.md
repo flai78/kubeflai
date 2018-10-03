@@ -5,10 +5,17 @@ Create mssql pswd
 
 kubectl create secret generic mssql --from-literal=password=YOUR_PASSWORD
 
+
+Create directory
+mkdir /mnt/data/mssql
+mkdir /mnt/data/bkp
+
 Create the PersistentVolume:
 
-kubectl create -f https://github.com/flai78/kubeflai/blob/master/mssql-volume-backup.yaml
-https://github.com/flai78/kubeflai/blob/master/mssql-volume.yaml
+kubectl create -f https://raw.githubusercontent.com/flai78/kubeflai/master/mssql-volume-backup.yaml
+kubectl create -f https://raw.githubusercontent.com/flai78/kubeflai/master/mssql-volume.yaml
+
+
 View information about the PersistentVolume:
 
 kubectl get pv mssql-volume
