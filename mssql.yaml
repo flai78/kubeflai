@@ -39,4 +39,6 @@ spec:
               mountPath: /mnt/data/bkp
       volumes:
             - name: mssql-volume
+              emptyDir: {}
             - name: bkp-volume
+              emptyDir: {}
