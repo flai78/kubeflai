@@ -8,6 +8,6 @@ metadata:
 spec:
   containers:
   - name: webapp
-    image: ngnix
+    image: nginx
     ports:
       - containerPort: 80
