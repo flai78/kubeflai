@@ -9,8 +9,8 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      aname: worker-app-pod
-      app: demo-voting-app
+        name: worker-app-pod
+        app: demo-voting-app
   template:
     metadata:
       name: worker-app-pod
@@ -19,5 +19,5 @@ spec:
         app: demo-voting-app
     spec:
       containers:
-        - name: worker-app
-          image: dockersamples/examplevotingapp_worker
+      - name: worker-app
+        image: dockersamples/examplevotingapp_worker
