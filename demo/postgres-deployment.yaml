@@ -4,7 +4,7 @@ metadata:
   name: db-deployment
   labels:
     name: db-deployment
-    app: db
+    app: demo-voting-app
 spec:
   replicas: 1
   selector:

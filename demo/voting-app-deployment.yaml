@@ -4,7 +4,7 @@ metadata:
   name: voting-app-deployment
   labels:
     name: voting-app-deployment
-    app: voting-app
+    app: demo-voting-app
 spec:
   replicas: 1
   selector:
